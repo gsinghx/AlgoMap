@@ -6,15 +6,16 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const BlogPostTemplate = ({ data, location }) => {
-  const post = data.markdownRemark
+  console.log(data)
+  const post = data.contentfulBlog
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const { previous, next } = data
 
   return (
     <Layout location={location} title={siteTitle}>
       <SEO
-        title={post.frontmatter.title}
-        description={post.frontmatter.description || post.excerpt}
+        title={post.title}
+        description={post.description}
       />
       <article
         className="blog-post"
@@ -22,11 +23,11 @@ const BlogPostTemplate = ({ data, location }) => {
         itemType="http://schema.org/Article"
       >
         <header>
-          <h1 itemProp="headline">{post.frontmatter.title}</h1>
-          <p>{post.frontmatter.date}</p>
+          <h1 itemProp="headline">{post.title}</h1>
+          <p>{post.date}</p>
         </header>
         <section
-          dangerouslySetInnerHTML={{ __html: post.html }}
+          dangerouslySetInnerHTML={{ __html: post.content.childMarkdownRemark.html }}
           itemProp="articleBody"
         />
         <hr />
@@ -46,15 +47,15 @@ const BlogPostTemplate = ({ data, location }) => {
         >
           <li>
             {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
+              <Link to={previous.slug} rel="prev">
+                ← {previous.title}
               </Link>
             )}
           </li>
           <li>
             {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
+              <Link to={next.slug} rel="next">
+                {next.title} →
               </Link>
             )}
           </li>
@@ -77,31 +78,28 @@ export const pageQuery = graphql`
         title
       }
     }
-    markdownRemark(id: { eq: $id }) {
+    contentfulBlog(slug: { eq: $id }) {
       id
-      excerpt(pruneLength: 160)
-      html
-      frontmatter {
-        title
-        date(formatString: "MMMM DD, YYYY")
+      title
+      tags
+      description {
         description
       }
+      content {
+        content
+        childMarkdownRemark {
+          html
+        }
+      }
+      date(formatString: "DD/MM/YYYY")
     }
-    previous: markdownRemark(id: { eq: $previousPostId }) {
-      fields {
-        slug
-      }
-      frontmatter {
-        title
-      }
+    previous: contentfulBlog(slug: { eq: $previousPostId }) {
+      slug
+      title
     }
-    next: markdownRemark(id: { eq: $nextPostId }) {
-      fields {
-        slug
-      }
-      frontmatter {
-        title
-      }
+    next: contentfulBlog(slug: { eq: $nextPostId }) {
+      slug
+      title
     }
   }
 `

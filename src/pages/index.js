@@ -7,7 +7,7 @@ import SEO from "../components/seo"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  const posts = data.allMarkdownRemark.nodes
+  const posts = data.allContentfulBlog.nodes
 
   if (posts.length === 0) {
     return (
@@ -29,10 +29,10 @@ const BlogIndex = ({ data, location }) => {
       <Bio />
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
-          const title = post.frontmatter.title || post.fields.slug
+          const title = post.title
 
           return (
-            <li key={post.fields.slug}>
+            <li key={post.slug}>
               <article
                 className="post-list-item"
                 itemScope
@@ -40,16 +40,16 @@ const BlogIndex = ({ data, location }) => {
               >
                 <header>
                   <h2>
-                    <Link to={post.fields.slug} itemProp="url">
+                    <Link to={post.slug} itemProp="url">
                       <span itemProp="headline">{title}</span>
                     </Link>
                   </h2>
-                  <small>{post.frontmatter.date}</small>
+                  <small>{post.date}</small>
                 </header>
                 <section>
                   <p
                     dangerouslySetInnerHTML={{
-                      __html: post.frontmatter.description || post.excerpt,
+                      __html:  post.description.childMarkdownRemark.html
                     }}
                     itemProp="description"
                   />
@@ -72,16 +72,21 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allContentfulBlog(sort: { fields: date, order: DESC }) {
       nodes {
-        excerpt
-        fields {
-          slug
-        }
-        frontmatter {
-          date(formatString: "MMMM DD, YYYY")
-          title
+        id
+        slug
+        title
+        tags
+        date(formatString: "DD/MM/YYYY")
+        description{
           description
+          childMarkdownRemark {
+            html
+          }
+        }
+        content{
+          content
         }
       }
     }
