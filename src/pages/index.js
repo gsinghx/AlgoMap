@@ -5,17 +5,17 @@ import SEO from "../components/seo"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  const posts = data.allContentfulBlog.nodes
+  const posts = data.allMarkdownRemark.nodes
 
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
-          const title = post.title
+          const title = post.frontmatter.title
 
           return (
-            <li key={post.slug}>
+            <li key={post.frontmatter.slug}>
               <article
                 className="post-list-item"
                 itemScope
@@ -23,7 +23,7 @@ const BlogIndex = ({ data, location }) => {
               >
                 <header>
                   <h2>
-                    <Link to={post.slug} itemProp="url">
+                    <Link to={post.frontmatter.slug} itemProp="url">
                       <span itemProp="headline">{title}</span>
                     </Link>
                   </h2>
@@ -46,21 +46,15 @@ export const pageQuery = graphql`
         title
       }
     }
-    allContentfulBlog(sort: { fields: date, order: DESC }) {
+    allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}, filter: {frontmatter: {draft: {eq: false}}}) {
       nodes {
         id
-        slug
-        title
-        tags
-        date(formatString: "MMMM DD, YYYY")
-        description{
+        frontmatter{
+          slug
+          title
+          tags
+          date(formatString: "MMMM DD, YYYY")
           description
-          childMarkdownRemark {
-            html
-          }
-        }
-        content{
-          content
         }
       }
     }

@@ -24,31 +24,25 @@
     transform: translate(0%, 0%) scale(1);
   }
 }
-.image-container-modal {
-  width: 100%;
+.modal-container{
+  padding-top:0px;
+  height:100%;
+}
+.modal-links {
   height: 100%;
 
+  position: relative !important;
+  float: right;
   z-index: 1;
   position: absolute;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  margin-top:10%;
+  list-style:none;
+  text-align: right;
 }
-.image-modal {
-  width: 700px;
-  height: 700px;
-  cursor: zoom-out;
+.modal-links a{
+  text-decoration: none;
+  font-size:40px;
 }
-
-.image-modal-wide {
-  width: 75%;
-  cursor: zoom-out;
-}
-.image-modal-tall {
-  width: 40%;
-  cursor: zoom-out;
-}
-
 .close-modal {
   display: block;
   background: rgba(0, 0, 0, 0);
@@ -61,105 +55,14 @@
   cursor: pointer;
   float: right;
   height: 100px;
-  width: 100px;
-}
-.image-buttons-mobile {
-  display: none;
-}
-.image-next {
-  display: block;
-  background: rgba(0, 0, 0, 0);
-  line-height: 100px;
-  color: #ffffff;
-  font-size: 70px;
-  z-index: 2;
-  position: relative;
-  border: none;
-  cursor: pointer;
-  float: right;
-  height: 100px;
-  width: 100px;
-}
-.image-previous {
-  display: block;
-  background: rgba(0, 0, 0, 0);
-  line-height: 100px;
-  color: #ffffff;
-  font-size: 70px;
-  z-index: 2;
-  position: relative;
-  border: none;
-  cursor: pointer;
-  float: left;
-  height: 100px;
-  width: 100px;
-}
-.arrow-disabled {
-  color: rgba(255, 255, 255, 0.2);
+  width: 50px;
 }
 
 @media only screen and (max-width: 600px) {
-  .image-modal {
-    height: auto;
-    /* max-height: 90%; */
-    width: 98%;
-  }
-  .image-modal-tall {
-    height: auto;
-    max-height: 90%;
-    width: 95%;
-  }
-  .image-modal-wide {
-    width: 98%;
-    cursor: zoom-out;
-  }
   .image-container-modal {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
-
-  .image-next {
-    display: none;
-  }
-  .image-previous {
-    display: none;
-  }
-  .image-buttons-mobile {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-  }
-  .image-next-mobile {
-    display: block;
-    background: rgba(0, 0, 0, 0);
-    line-height: 100px;
-    color: #ffffff;
-    font-size: 70px;
-    z-index: 2;
-    position: relative;
-    border: none;
-    cursor: pointer;
-    float: left;
-    height: 100px;
-    width: 100px;
-  }
-  .image-previous-mobile {
-    display: block;
-    background: rgba(0, 0, 0, 0);
-    line-height: 100px;
-    color: #ffffff;
-    font-size: 70px;
-    z-index: 2;
-    position: relative;
-    border: none;
-    cursor: pointer;
-    float: left;
-    height: 100px;
-    width: 100px;
-  }
-  .arrow-disabled {
-    color: rgba(255, 255, 255, 0.2);
   }
 }

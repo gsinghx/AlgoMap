@@ -12,11 +12,18 @@ module.exports = {
     },
   },
   plugins: [
+    // {
+    //   resolve: `gatsby-source-contentful`,
+    //   options: {
+    //     spaceId: `o0znrm9iblcg`,
+    //     accessToken: `nbug-amYmAVnCaxmHmLSsGCRd2HsopOP7SLUggd-VBQ`,
+    //   },
+    // },
     {
-      resolve: `gatsby-source-contentful`,
+      resolve: `gatsby-source-filesystem`,
       options: {
-        spaceId: `o0znrm9iblcg`,
-        accessToken: `nbug-amYmAVnCaxmHmLSsGCRd2HsopOP7SLUggd-VBQ`,
+        path: `${__dirname}/content/blog`,
+        name: 'blog',
       },
     },
     {

@@ -24,8 +24,14 @@ const Layout = ({ location, title, children }) => {
 
   return (
     <div className="global-wrapper" data-is-root-path={isRootPath}>
-      <header className="global-header">{header}</header>
-      <div onClick={() => setOpen(true)}>Menu</div>
+      <header style={{float:`left`}}className="global-header">{header}</header>
+      <div style={{
+        float:`right`,
+        fontSize:`30px`,
+        cursor:`pointer`
+      }}
+      onClick={() => setOpen(true)}> &#9776;</div>
+      <div style={{clear:`both`}}></div>
       <Nav
         isOpen={open}
         onClose={() => {
