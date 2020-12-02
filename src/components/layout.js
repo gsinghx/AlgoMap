@@ -1,7 +1,9 @@
 import React from "react"
 import { Link } from "gatsby"
+import Nav from "./Nav"
 
 const Layout = ({ location, title, children }) => {
+  const [open, setOpen] = React.useState(false);
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath
   let header
@@ -23,6 +25,15 @@ const Layout = ({ location, title, children }) => {
   return (
     <div className="global-wrapper" data-is-root-path={isRootPath}>
       <header className="global-header">{header}</header>
+      <div onClick={() => setOpen(true)}>Menu</div>
+      <Nav
+        isOpen={open}
+        onClose={() => {
+          setOpen(false);
+        }}
+      >
+        {open}
+      </Nav>
       <main>{children}</main>
       <footer>
         © {new Date().getFullYear()}, Built with

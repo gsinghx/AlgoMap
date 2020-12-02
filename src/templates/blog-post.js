@@ -6,7 +6,6 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const BlogPostTemplate = ({ data, location }) => {
-  console.log(data)
   const post = data.contentfulBlog
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const { previous, next } = data
@@ -91,7 +90,7 @@ export const pageQuery = graphql`
           html
         }
       }
-      date(formatString: "DD/MM/YYYY")
+      date(formatString: "MMMM DD, YYYY")
     }
     previous: contentfulBlog(slug: { eq: $previousPostId }) {
       slug

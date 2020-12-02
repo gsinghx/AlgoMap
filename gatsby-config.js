@@ -1,14 +1,14 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Dont Forget This Time`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Gagandeep Singh`,
+      summary: `who likes algorithms but tends to forget them.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
+    description: `A blog to not forget algorithms easily`,
+    siteUrl: `https://22boxes.com`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `iamtherealgd`,
     },
   },
   plugins: [
