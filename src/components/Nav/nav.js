@@ -1,6 +1,6 @@
-import { useStaticQuery, graphql, Link } from "gatsby"
-import React, { useState } from 'react';
-import { createPortal, render } from 'react-dom';
+import { Link } from "gatsby"
+import React from 'react';
+import { createPortal } from 'react-dom';
 import "./index.css";
 
 const Nav = ({isOpen, onClose}) => {
@@ -19,8 +19,10 @@ const Nav = ({isOpen, onClose}) => {
           </button>
           <div style={{clear:`both`}}></div>
           <ul className="modal-links" >
-            {/* <li><Link to='/about'>Glossary</Link></li> */}
+            <li><Link to='/'>Home</Link></li>
             <li><Link to='/categories'>Categories</Link></li>
+            <li><Link to='/all'>All Posts</Link></li>
+            
             <li><Link to='/books'>Books</Link></li>
             <li><Link to='/about'>About</Link></li>
             </ul>
