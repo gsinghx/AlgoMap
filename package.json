@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "AlgoMap",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "A blog about Algorithms",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Gagandeep Singh",
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
@@ -29,13 +29,12 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
-    "typeface-merriweather": "0.0.72",
-    "typeface-montserrat": "0.0.75"
+    "typeface-open-sans": "^1.1.13"
   },
   "devDependencies": {
     "prettier": "2.1.2"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "homepage": "https://22boxes.com",
   "keywords": [
     "gatsby"
   ],

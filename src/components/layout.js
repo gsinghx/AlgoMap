@@ -1,46 +1,23 @@
 import React from "react"
 import { Link } from "gatsby"
-import Nav from "./Nav"
+import "./layout.css"
+
+import Header from "./header"
+import Footer from "./footer"
+import Masthead from "./masthead"
 
 const Layout = ({ location, title, children }) => {
-  const [open, setOpen] = React.useState(false);
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath
-  let header
-
-  if (isRootPath) {
-    header = (
-      <h1 className="main-heading">
-        <Link to="/">{title}</Link>
-      </h1>
-    )
-  } else {
-    header = (
-      <Link className="header-link-home" to="/">
-        {title}
-      </Link>
-    )
-  }
-
+  
   return (
     <div className="global-wrapper" data-is-root-path={isRootPath}>
-      <header style={{float:`left`}}className="global-header">{header}</header>
-      <div style={{
-        float:`right`,
-        fontSize:`30px`,
-        cursor:`pointer`
-      }}
-      onClick={() => setOpen(true)}> &#9776;</div>
+      <Header/>
+      
       <div style={{clear:`both`}}></div>
-      <Nav
-        isOpen={open}
-        onClose={() => {
-          setOpen(false);
-        }}
-      >
-        {open}
-      </Nav>
+      <Masthead/>
       <main>{children}</main>
+      <Footer/>
       <footer>
         © {new Date().getFullYear()}, Built with
         {` `}

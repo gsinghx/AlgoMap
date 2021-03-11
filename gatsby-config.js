@@ -1,14 +1,14 @@
 module.exports = {
   siteMetadata: {
-    title: `Dont Forget This Time`,
+    title: `AlgoMap`,
     author: {
       name: `Gagandeep Singh`,
-      summary: `who likes algorithms but tends to forget them.`,
+      summary: `A website about Algorithms`,
     },
-    description: `A blog to not forget algorithms easily`,
+    description: `A website about Algorithms`,
     siteUrl: `https://22boxes.com`,
     social: {
-      twitter: `iamtherealgd`,
+      twitter: `gagandeep_rangi`,
     },
   },
   plugins: [

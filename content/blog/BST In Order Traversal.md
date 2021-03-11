@@ -40,5 +40,12 @@ function preorder(root){
 ##### Iterative:
 Depth first search, using a stack.
 ```javascript
+var traversal = [];
 
+var stack = [];
+stack.push(root);
+
+while(stack.length!=0){
+   
+}
 ```
