@@ -1,0 +1,13 @@
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+.footer-social-icons {
+  display: flex;
+}
+.footer-social-link {
+  height: 20px;
+  width: 20px;
+  margin-left: 20px;
+}

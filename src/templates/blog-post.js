@@ -14,14 +14,13 @@ const BlogPostTemplate = ({ data, location }) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description}
       />
-      <hr/>
       <article
         className="blog-post"
         itemScope
         itemType="http://schema.org/Article"
       >
         <header>
-          <h1 itemProp="headline">{post.frontmatter.title}</h1>
+          <h2 itemProp="headline">{post.frontmatter.title}</h2>
           {/* <p>{post.frontmatter.date}</p> */}
         </header>
         <section
@@ -29,8 +28,7 @@ const BlogPostTemplate = ({ data, location }) => {
           itemProp="articleBody"
         />
         <hr />
-        <footer>
-        </footer>
+        <footer></footer>
       </article>
       <nav className="blog-post-nav">
         <ul
@@ -75,25 +73,25 @@ export const pageQuery = graphql`
         title
       }
     }
-    markdownRemark(frontmatter: {slug: {eq: $id}}) {
+    markdownRemark(frontmatter: { slug: { eq: $id } }) {
       id
-      frontmatter{
+      frontmatter {
         date(formatString: "MMMM DD, YYYY")
         title
         tags
         description
         slug
-      } 
+      }
       html
     }
-    previous: markdownRemark(frontmatter: {slug: {eq: $previousPostId}}) {
-      frontmatter{
+    previous: markdownRemark(frontmatter: { slug: { eq: $previousPostId } }) {
+      frontmatter {
         slug
         title
       }
     }
-    next: markdownRemark(frontmatter: {slug: {eq: $nextPostId}}) {
-      frontmatter{
+    next: markdownRemark(frontmatter: { slug: { eq: $nextPostId } }) {
+      frontmatter {
         slug
         title
       }
