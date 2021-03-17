@@ -4,10 +4,11 @@ slug: /bst-pre-order
 date: "2020-06-16T22:12:03.284Z"
 tags: ["Tree", "Traversal"]
 description: BST Pre Order Traversal
-draft: false
+
+status: done
 ---
 
-BST Construction: [Link](https://dontforgetagain.netlify.app/bst)
+BST Construction: [Link](/bst)
 
 Sample tree:
 
@@ -19,11 +20,11 @@ Sample tree:
     1     3       10
 ```
 
-### Pre Order traversal
+## Pre Order traversal
 
 [5, 2, 1, 3, 9, 10]
 
-##### Recursive:
+## Recursive:
 
 Trivial solution:
 
@@ -39,7 +40,7 @@ function preorder(root) {
 }
 ```
 
-##### Iterative:
+## Iterative:
 
 Depth first search, using a stack.
 

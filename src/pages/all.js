@@ -32,7 +32,7 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       sort: { fields: frontmatter___date, order: DESC }
-      filter: { frontmatter: { draft: { eq: false } } }
+      filter: { frontmatter: { status: { eq: "done" } } }
     ) {
       nodes {
         id

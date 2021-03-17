@@ -4,7 +4,8 @@ slug: /bst
 date: "2020-06-16T22:12:03.284Z"
 tags: ["Tree", "Construction"]
 description: BST Construction
-draft: false
+
+status: done
 ---
 
 Properties of BST:
@@ -15,7 +16,7 @@ Properties of BST:
 ### A tree Node:
 
 ```javascript
-function Node(val) {
+var TreeNode = function (val) {
   this.val = val
   this.left = null
   this.right = null
@@ -25,9 +26,11 @@ function Node(val) {
 ### Naive approach to construct a BST:
 
 ```javascript
-var root = new Node(1)
-root.left = new Node(0)
-root.right = new Node(2)
+var root = new TreeNode(1)
+root.left = new TreeNode(0)
+root.right = new TreeNode(2)
+root.left.left = new TreeNode(3)
+root.right.right = new TreeNode(4)
 ```
 
 ### Constructing BST from an array representing a tree:
@@ -60,7 +63,7 @@ Constructing a tree from this array:
 function constructTree(arr, i) {
   if (i >= arr.length) return null
 
-  var node = new Node(arr[i])
+  var node = new TreeNode(arr[i])
   node.left = constructTree(arr, 2 * i + 1)
   node.right = constructTree(arr, 2 * i + 2)
 

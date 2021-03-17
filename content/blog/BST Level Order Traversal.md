@@ -4,10 +4,11 @@ slug: /bst-level-order
 date: "2020-06-16T22:12:03.284Z"
 tags: ["Tree", "Traversal"]
 description: BST Level Order Traversal
-draft: false
+
+status: done
 ---
 
-BST Construction: [Link](https://dontforgetagain.netlify.app/bst)
+BST Construction: [Link](/bst)
 
 Sample tree:
 
@@ -19,7 +20,7 @@ Sample tree:
     1     3       10
 ```
 
-### Level Order traversal
+## Level Order traversal
 
 [
 [5],
@@ -27,7 +28,7 @@ Sample tree:
 [2,3,10]
 ]
 
-##### Recursive:
+## Recursive:
 
 ```javascript
 var traversal = []
@@ -45,7 +46,7 @@ function levelOrder(root, level) {
 levelOrder(root, 0)
 ```
 
-##### Iterative:
+## Iterative:
 
 Breadth first search, using a queue.
 

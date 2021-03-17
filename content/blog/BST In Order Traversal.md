@@ -4,10 +4,11 @@ slug: /bst-in-order
 date: "2020-06-16T22:12:03.284Z"
 tags: ["Tree", "Traversal"]
 description: BST In Order Traversal
-draft: false
+
+status: done
 ---
 
-BST Construction: [Link](https://dontforgetagain.netlify.app/bst)
+BST Construction: [Link](/bst)
 
 Sample tree:
 
@@ -19,12 +20,13 @@ Sample tree:
     1     3       10
 ```
 
-### In Order traversal
+## In Order traversal
 
-[1, 2, 3, 5, 9, 10]  
-Results in a sorted list.
+[1, 2, 3, 5, 9, 10]
 
-##### Recursive:
+> In order traversal of a BST results in a sorted list.
+
+## Recursive:
 
 Trivial solution:
 
@@ -40,7 +42,7 @@ function preorder(root) {
 }
 ```
 
-##### Iterative:
+## Iterative:
 
 Depth first search, using a stack.
 
@@ -48,7 +50,15 @@ Depth first search, using a stack.
 var traversal = []
 
 var stack = []
-stack.push(root)
 
-while (stack.length != 0) {}
+while (stack.length != 0 || root != null) {
+  while (root != null) {
+    stack.push(root)
+    root = root.left
+  }
+
+  var node = stack.pop()
+  traversal.push(node.val)
+  root = node.right
+}
 ```
