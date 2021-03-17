@@ -1,6 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 
 const Status = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -18,6 +19,7 @@ const Status = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
+      <SEO title="Status" />
       <h1>Status</h1>
 
       <div className="status-container">
