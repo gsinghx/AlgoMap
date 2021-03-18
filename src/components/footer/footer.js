@@ -22,10 +22,18 @@ const Footer = () => {
         </div>
          */}
         <div className="footer-social-icons">
-          <a href="" className="footer-social-link">
+          <a
+            href="https://twitter.com/gagandeep_rangi"
+            target="blank"
+            className="footer-social-link"
+          >
             <img src={twitterIcon} />
           </a>
-          <a href="" className="footer-social-link">
+          <a
+            href="https://instagram.com/gagandeep.rangi"
+            target="blank"
+            className="footer-social-link"
+          >
             <img src={instagramIcon} />
           </a>
         </div>

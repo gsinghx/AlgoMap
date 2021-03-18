@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import "./postabbrev.css"
+import { kebabCase } from "../../utils/helpers"
 
 const PostAbbrev = ({ post }) => {
   return (
@@ -19,8 +20,12 @@ const PostAbbrev = ({ post }) => {
         </h2>
         {post.frontmatter.tags.map(tag => {
           return (
-            <Link to="/" className="post-list-item-tag" key={Math.random()}>
-              {tag}
+            <Link
+              to={`/categories/${kebabCase(tag)}`}
+              className="post-list-item-tag"
+              key={Math.random()}
+            >
+              #{tag}
             </Link>
           )
         })}

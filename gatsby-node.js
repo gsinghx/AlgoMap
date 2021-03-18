@@ -1,5 +1,6 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
+const { kebabCase } = require("./src/utils/helpers")
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
@@ -16,8 +17,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           limit: 1000
         ) {
           nodes {
-            frontmatter{
+            frontmatter {
               slug
+              tags
             }
           }
         }
@@ -33,15 +35,17 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     return
   }
 
-  const posts = result.data.allMarkdownRemark.nodes;
+  const posts = result.data.allMarkdownRemark.nodes
   // Create blog posts pages
   // But only if there's at least one markdown file found at "content/blog" (defined in gatsby-config.js)
   // `context` is available in the template as a prop and as a variable in GraphQL
 
-  posts.forEach((post, index)=>{
-  if (posts.length > 0) {
-      const previousPostId = index === 0 ? null : posts[index - 1].frontmatter.slug
-      const nextPostId = index === posts.length - 1 ? null : posts[index + 1].frontmatter.slug
+  posts.forEach((post, index) => {
+    if (posts.length > 0) {
+      const previousPostId =
+        index === 0 ? null : posts[index - 1].frontmatter.slug
+      const nextPostId =
+        index === posts.length - 1 ? null : posts[index + 1].frontmatter.slug
 
       createPage({
         path: post.frontmatter.slug,
@@ -52,15 +56,33 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           nextPostId,
         },
       })
-      }
+    }
+  })
+
+  const tagPage = path.resolve("./src/templates/category.js")
+  let tags = []
+  console.log(posts)
+  posts.forEach(post => {
+    console.log(post)
+    tags = tags.concat(post.frontmatter.tags)
+  })
+  console.log(tags)
+  tags.forEach((tag, index) => {
+    createPage({
+      path: `/categories/${kebabCase(tag)}`,
+      component: tagPage,
+      context: {
+        tag,
+      },
     })
+  })
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
-  
+
   if (node.internal.type === `MarkdownRemark`) {
-    return;
+    return
     const value = createFilePath({ node, getNode })
 
     createNodeField({

@@ -2,6 +2,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import { kebabCase } from "../utils/helpers"
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
@@ -20,9 +21,23 @@ const BlogPostTemplate = ({ data, location }) => {
         itemType="http://schema.org/Article"
       >
         <header>
-          <h2 itemProp="headline">{post.frontmatter.title}</h2>
+          <h2 itemProp="headline" style={{ marginBottom: `0.3em` }}>
+            {post.frontmatter.title}
+          </h2>
           {/* <p>{post.frontmatter.date}</p> */}
         </header>
+        {post.frontmatter.tags.map(tag => {
+          return (
+            <Link
+              to={`/categories/${kebabCase(tag)}`}
+              className="post-list-item-tag"
+              key={Math.random()}
+            >
+              #{tag}
+            </Link>
+          )
+        })}
+        <hr />
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
