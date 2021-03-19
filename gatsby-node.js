@@ -20,6 +20,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             frontmatter {
               slug
               tags
+              status
             }
           }
         }
@@ -40,12 +41,38 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // But only if there's at least one markdown file found at "content/blog" (defined in gatsby-config.js)
   // `context` is available in the template as a prop and as a variable in GraphQL
 
-  posts.forEach((post, index) => {
-    if (posts.length > 0) {
+  const donePosts = posts.filter(post => post.frontmatter.status === "done")
+  const otherPosts = posts.filter(post => post.frontmatter.status !== "done")
+  console.log(donePosts)
+  console.log(otherPosts)
+  donePosts.forEach((post, index) => {
+    if (donePosts.length > 0) {
       const previousPostId =
-        index === 0 ? null : posts[index - 1].frontmatter.slug
+        index === 0 ? null : donePosts[index - 1].frontmatter.slug
       const nextPostId =
-        index === posts.length - 1 ? null : posts[index + 1].frontmatter.slug
+        index === donePosts.length - 1
+          ? null
+          : donePosts[index + 1].frontmatter.slug
+
+      createPage({
+        path: post.frontmatter.slug,
+        component: blogPost,
+        context: {
+          id: post.frontmatter.slug,
+          previousPostId,
+          nextPostId,
+        },
+      })
+    }
+  })
+  otherPosts.forEach((post, index) => {
+    if (otherPosts.length > 0) {
+      const previousPostId =
+        index === 0 ? null : otherPosts[index - 1].frontmatter.slug
+      const nextPostId =
+        index === otherPosts.length - 1
+          ? null
+          : otherPosts[index + 1].frontmatter.slug
 
       createPage({
         path: post.frontmatter.slug,
@@ -61,12 +88,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const tagPage = path.resolve("./src/templates/category.js")
   let tags = []
-  console.log(posts)
   posts.forEach(post => {
-    console.log(post)
     tags = tags.concat(post.frontmatter.tags)
   })
-  console.log(tags)
+
   tags.forEach((tag, index) => {
     createPage({
       path: `/categories/${kebabCase(tag)}`,
