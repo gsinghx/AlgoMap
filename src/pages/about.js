@@ -8,8 +8,8 @@ const About = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
-      <h1>ABOUT</h1>
+      <SEO title="About" />
+      <h1>About</h1>
     </Layout>
   )
 }

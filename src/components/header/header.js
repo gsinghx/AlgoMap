@@ -39,9 +39,9 @@ const Header = () => {
           </Link>
         </div>
         <div>
-          <Link className="nav-link" to="/books">
+          {/* <Link className="nav-link" to="/books">
             Books
-          </Link>
+          </Link> */}
           <Link className="nav-link" to="/about" style={{ marginRight: `0px` }}>
             About
           </Link>

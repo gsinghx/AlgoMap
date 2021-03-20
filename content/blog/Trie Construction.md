@@ -2,10 +2,10 @@
 title: Trie Construction
 slug: /trie
 date: "2020-06-16T22:12:03.284Z"
-tags: ["Trie"]
+tags: ["Trie", "Construction"]
 description: Trie Construction
 
-status: todo
+status: done
 ---
 
 BST Construction

@@ -43,8 +43,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const donePosts = posts.filter(post => post.frontmatter.status === "done")
   const otherPosts = posts.filter(post => post.frontmatter.status !== "done")
-  console.log(donePosts)
-  console.log(otherPosts)
   donePosts.forEach((post, index) => {
     if (donePosts.length > 0) {
       const previousPostId =

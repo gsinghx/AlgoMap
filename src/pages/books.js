@@ -8,7 +8,7 @@ const Books = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
+      <SEO title="Books" />
       <h1>Books</h1>
     </Layout>
   )

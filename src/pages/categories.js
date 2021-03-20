@@ -19,12 +19,11 @@ const styles = {
 
 const Categories = ({ data, location }) => {
   var groups = data.allMarkdownRemark.group
-  console.log(groups)
   const siteTitle = data.site.siteMetadata?.title || `Title`
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
+      <SEO title="Categories" />
       <h1>Categories</h1>
       <div style={styles.tagListDiv}>
         {groups.map(tag => (
