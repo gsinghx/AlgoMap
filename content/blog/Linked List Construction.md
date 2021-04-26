@@ -2,7 +2,7 @@
 title: Linked List Construction
 slug: /ll
 date: "2020-06-16T22:12:03.284Z"
-tags: ["LinkedList", "Construction"]
+tags: ["Linked List", "Construction"]
 description: Linked List Construction
 
 status: done
