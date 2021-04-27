@@ -16,10 +16,6 @@ BST Construction
 - Recursive
 
 ```javascript
-
-```
-
-```javascript
 function validateBST(node, lowerBound, upperBound) {
   if (node == null) return true
 

@@ -7,7 +7,3 @@ description: Heap Construction
 
 status: todo
 ---
-
-```javascript
-
-```

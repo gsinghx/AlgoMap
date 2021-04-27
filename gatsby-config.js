@@ -23,7 +23,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/blog`,
-        name: "blog",
+        name: `blog`,
       },
     },
     {
@@ -64,6 +64,12 @@ module.exports = {
 
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
+          {
+            resolve: "gatsby-remark-external-links",
+            options: {
+              target: "_blank",
+            },
+          },
         ],
       },
     },

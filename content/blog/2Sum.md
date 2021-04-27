@@ -2,7 +2,7 @@
 title: 2 Sum
 slug: /2-sum
 date: "2020-06-16T22:12:03.284Z"
-tags: ["Map"]
+tags: []
 description: 2 Sum
 
 status: doing
@@ -22,17 +22,16 @@ Example 3:
 Input: nums = [3,3], target = 6
 Output: [0,1]
 
-
 ```javascript
-var twoSum = function(nums, target) {
-    var map = new Map();
-    
-    for(var i=0; i<nums.length; i++){
-        if(map.has(target-nums[i])){
-            return [map.get(target-nums[i]), i];
-        }else{
-            map.set(nums[i], i);
-        }
+var twoSum = function (nums, target) {
+  var map = new Map()
+
+  for (var i = 0; i < nums.length; i++) {
+    if (map.has(target - nums[i])) {
+      return [map.get(target - nums[i]), i]
+    } else {
+      map.set(nums[i], i)
     }
-};
+  }
+}
 ```

@@ -12,7 +12,7 @@ const PostAbbrev = ({ post }) => {
         itemType="http://schema.org/Article"
       >
         <h2>
-          <Link to={post.frontmatter.slug} itemProp="url">
+          <Link to={post.fields.slug} itemProp="url">
             <span itemProp="headline" className="post-list-item-link">
               {post.frontmatter.title}
             </span>

@@ -8,6 +8,58 @@ description: BST from Preorder and Inorder Traversals
 status: done
 ---
 
+Construct Binary Tree from Preorder and Inorder Traversal
+Given two integer arrays preorder and inorder where preorder is the preorder traversal of a binary tree and inorder is the inorder traversal of the same tree, construct and return the binary tree.
+
+Example 1:
+
+Example 2:
+
+Constraints:
+
+```
+ Input: preorder = [3,9,20,15,7], inorder = [9,3,15,20,7]
+Output: [3,9,20,null,null,15,7]
+
+```
+
+```
+Input: preorder = [-1], inorder = [-1]
+Output: [-1]
+
+```
+
+"Array","Tree","Depth-first Search"
+
+```javascript
+/**
+  * Definition for a binary tree node.
+  * function TreeNode(val, left, right) {
+  *     this.val = (val===undefined ? 0 : val)
+  *     this.left = (left===undefined ? null : left)
+  *     this.right = (right===undefined ? null : right)
+  * }
+  */
+ /**
+  * @param {number[]} preorder
+  * @param {number[]} inorder
+  * @return {TreeNode}
+  */
+ var buildTree = function(preorder, inorder) {
+     
+     if(preorder.length==0)return null;
+     
+     var root = new TreeNode(preorder[0]);
+     
+     var inPos = inorder.indexOf(preorder[0]);
+     root.left = buildTree(preorder.slice(1, inPos+1), inorder.slice(0, inPos));
+     root.right = buildTree(preorder.slice(1+inPos), inorder.slice(inPos+1));
+     
+     return root;
+ };
+ ​
+```
+
 BST Construction: [Link](/bst)
 
 Sample tree:
@@ -53,7 +105,3 @@ var root = createNode(inorderTraversal, preorderTraversal)
 ```
 
 ## Iterative:
-
-```javascript
-
-```

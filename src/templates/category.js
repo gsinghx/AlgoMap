@@ -18,7 +18,7 @@ const CategoryTemplate = ({ pageContext, data, location }) => {
       <main>
         <ol style={{ listStyle: `none` }}>
           {posts.map(node => {
-            return <PostAbbrev key={node.frontmatter.slug} post={node} />
+            return <PostAbbrev key={node.fields.slug} post={node} />
           })}
         </ol>
       </main>
@@ -44,6 +44,9 @@ export const pageQuery = graphql`
       totalCount
       nodes {
         id
+        fields {
+          slug
+        }
         frontmatter {
           slug
           title

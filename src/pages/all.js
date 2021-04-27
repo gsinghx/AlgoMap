@@ -14,7 +14,7 @@ const All = ({ data, location }) => {
       <h1>All Posts</h1>
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
-          return <PostAbbrev key={post.frontmatter.slug} post={post} />
+          return <PostAbbrev key={post.fields.slug} post={post} />
         })}
       </ol>
     </Layout>
@@ -36,6 +36,9 @@ export const pageQuery = graphql`
     ) {
       nodes {
         id
+        fields {
+          slug
+        }
         frontmatter {
           slug
           title

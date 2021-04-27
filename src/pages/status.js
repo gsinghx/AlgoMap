@@ -27,7 +27,7 @@ const Status = ({ data, location }) => {
           <h3>Todo ({todo.length}):</h3>
           <div style={statusStyles}>
             {todo.map(node => {
-              return <StatusItem key={node.frontmatter.slug} node={node} />
+              return <StatusItem key={node.fields.slug} node={node} />
             })}
           </div>
         </div>
@@ -35,7 +35,7 @@ const Status = ({ data, location }) => {
           <h3>Doing ({doing.length}):</h3>
           <div style={statusStyles}>
             {doing.map(node => {
-              return <StatusItem key={node.frontmatter.slug} node={node} />
+              return <StatusItem key={node.fields.slug} node={node} />
             })}
           </div>
         </div>
@@ -43,7 +43,7 @@ const Status = ({ data, location }) => {
           <h3>Done ({done.length}):</h3>
           <div style={statusStyles}>
             {done.map(node => {
-              return <StatusItem key={node.frontmatter.slug} node={node} />
+              return <StatusItem key={node.fields.slug} node={node} />
             })}
           </div>
         </div>
@@ -67,7 +67,7 @@ const StatusItem = ({ node }) => {
       }}
     >
       <small>{node.frontmatter.date}</small>
-      <Link to={node.frontmatter.slug} style={{ width: `170px` }}>
+      <Link to={node.fields.slug} style={{ width: `170px` }}>
         {node.frontmatter.title}
       </Link>
     </div>
@@ -86,6 +86,9 @@ export const pageQuery = graphql`
     allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
       nodes {
         id
+        fields {
+          slug
+        }
         frontmatter {
           slug
           title
