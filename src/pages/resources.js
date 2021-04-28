@@ -3,18 +3,18 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const Books = ({ data, location }) => {
+const Resources = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="Books" />
-      <h1>Books</h1>
+      <SEO title="Resources" />
+      <h1>Resources</h1>
     </Layout>
   )
 }
 
-export default Books
+export default Resources
 
 export const pageQuery = graphql`
   query {

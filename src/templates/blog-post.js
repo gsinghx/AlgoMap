@@ -37,12 +37,12 @@ const BlogPostTemplate = ({ data, location }) => {
             </Link>
           )
         })}
-        <hr />
+        <hr style={{ backgroundColor: `var(--color-text-light)` }} />
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
         />
-        <hr />
+        <hr style={{ backgroundColor: `var(--color-text-light)` }} />
         <footer></footer>
       </article>
       <nav className="blog-post-nav">

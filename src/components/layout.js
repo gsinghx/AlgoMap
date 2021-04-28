@@ -13,7 +13,7 @@ const Layout = ({ location, title, children }) => {
 
   return (
     <div className="global-wrapper" data-is-root-path={isRootPath}>
-      <Header />
+      <Header location={location.pathname} />
       <main className="layout-main">{children}</main>
       {/* <Newsletter /> */}
       <Footer />

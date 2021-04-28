@@ -51,12 +51,6 @@
   --fontSize-5: 2.074rem;
   --fontSize-6: 2.488rem;
   --fontSize-7: 2.986rem;
-  --color-primary: #000;
-  --color-text: #495057;
-  --color-text-light: #5f6c80;
-  --color-heading: #070707;
-  --color-heading-black: black;
-  --color-accent: #d1dce5;
 }
 
 /* HTML elements */
@@ -76,11 +70,35 @@ html {
 }
 
 body {
-  min-height: 100%;
+  --color-primary: #000;
+  --color-text: #495057;
+  --color-text-light: #5f6c80;
+  --color-heading: #070707;
+  --color-heading-black: #000;
+  --color-accent: #d1dce5;
+
+  --bgFrom: #fff;
+  --bgTo: #e2e2e2;
+  --shuffle-icon: url("images/shuffle.svg");
+
+  min-height: 100vh;
   font-family: var(--font-body);
   font-size: var(--fontSize-1);
   color: var(--color-text);
-  background: linear-gradient(#fff, #f1f1f1);
+  background: linear-gradient(var(--bgFrom), var(--bgTo));
+}
+
+body.dark {
+  --color-primary: #fff;
+  --color-text: rgb(201, 201, 201);
+  --color-text-light: rgb(138, 138, 138);
+  --color-heading: rgb(240, 240, 240);
+  --color-heading-black: #fff;
+  --color-accent: #d1dce5;
+
+  --bgFrom: rgb(26, 26, 26);
+  --bgTo: #000;
+  --shuffle-icon: url("images/shuffle-dark.svg");
 }
 
 footer {

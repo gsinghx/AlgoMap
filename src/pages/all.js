@@ -5,6 +5,7 @@ import SEO from "../components/seo"
 import PostAbbrev from "../components/postabbrev"
 import * as JsSearch from "js-search"
 import shuffleIcon from "../assets/images/shuffle.svg"
+import shuffleIconDark from "../assets/images/shuffle-dark.svg"
 
 const All = ({ data, location }) => {
   const rebuildIndex = () => {
@@ -50,8 +51,6 @@ const All = ({ data, location }) => {
     rebuildIndex()
   }, [])
 
-  // console.log(posts)
-
   const resultsToShow = searchQuery === "" ? posts : searchResults
 
   return (
@@ -83,20 +82,13 @@ const All = ({ data, location }) => {
           <div
             style={{
               height: `56px`,
+              width: `80px`,
               cursor: `pointer`,
               marginLeft: `10px`,
+              background: `var(--shuffle-icon) no-repeat`,
             }}
             onClick={showRandomArticle}
-          >
-            <img
-              src={shuffleIcon}
-              style={{
-                marginTop: `3px`,
-                width: `50px`,
-                height: `50px`,
-              }}
-            />
-          </div>
+          ></div>
         </div>
       </form>
       <ol style={{ listStyle: `none` }}>

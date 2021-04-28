@@ -1,34 +1,33 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
 
 body {
-  --bg: #ffffff;
-  --textTitle: #00897b;
-  --textTitleLight: #858b93;
-  --titleHoverBG: #edf7f6;
+  --color-primary: #000;
+  --color-text: #495057;
+  --color-text-light: #5f6c80;
+  --color-heading: #070707;
+  --color-heading-black: black;
+  --color-accent: #d1dce5;
 
-  background-color: var(--bg);
-}
+  --bgFrom: #fff;
+  --bgTo: #f1f1f1;
 
-body.light {
-  --bg: #282c35;
-  --header: #ffffff;
-  --textNormal: rgba(255, 255, 255, 0.88);
-  --textTitle: #ffffff;
-  --textTitleGrey: #cbcbcb;
-  --textLink: var(--pink);
-  --hr: hsla(0, 0%, 100%, 0.2);
-  --inlineCode-bg: hsl(222, 14%, 25%);
-  --inlineCode-text: #e6e6e6;
-  --tag-bg: rgb(143, 91, 35);
-  --tag-color: #dddddd;
-  --breadcrumbsTextColor: #a1c4e9;
-  --breadcrumbsTextColorActive: #888888;
-  --linkBackground: rgba(187, 239, 253, 0.3);
-  --linkBorder: rgba(0, 0, 0, 0.2);
-  --nav-color: #d23669;
+  min-height: 100vh;
+  font-family: var(--font-body);
+  font-size: var(--fontSize-1);
+  color: var(--color-text);
+  background: linear-gradient(var(--bgFrom), var(--bgTo));
 }
 
 body.dark {
+  --color-primary: #fff;
+  --color-text: #fff;
+  --color-text-light: #fff;
+  --color-heading: #fff;
+  --color-heading-black: fff;
+  --color-accent: #d1dce5;
+
+  --bgFrom: #000;
+  --bgTo: #000;
 }
 
 h1,
