@@ -1,35 +1,24 @@
 ---
 title: 3 Sum
-slug: /3-sum
 date: "2020-06-16T22:12:03.284Z"
 tags: ["Array", "Two Pointer"]
 description: 3 Sum
 
-status: todo
+status: done
 ---
 
-Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
-
-Notice that the solution set must not contain duplicate triplets.
+Given an integer array, return all unique triplets that sum to 0.
 
 Example 1:
 
+```
 Input: nums = [-1,0,1,2,-1,-4]
 Output: [[-1,-1,2],[-1,0,1]]
-Example 2:
+```
 
-Input: nums = []
-Output: []
-Example 3:
-
-Input: nums = [0]
-Output: []
+## Solution:
 
 ```javascript
-/**
- * @param {number[]} nums
- * @return {number[][]}
- */
 var threeSum = function (nums) {
   nums.sort((a, b) => a - b)
   var out = []

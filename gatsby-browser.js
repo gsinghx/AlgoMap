@@ -1,9 +1,9 @@
 // custom typefaces
 import "typeface-open-sans"
 // normalize CSS across browsers
-import "./src/normalize.css"
+import "./src/assets/normalize.css"
 // custom CSS styles
-import "./src/style.css"
+import "./src/assets/style.css"
 
 // Highlighting for code blocks
 import "prismjs/themes/prism.css"

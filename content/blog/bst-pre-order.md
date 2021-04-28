@@ -1,6 +1,5 @@
 ---
 title: BST Pre Order Traversal
-slug: /bst-pre-order
 date: "2020-06-16T22:12:03.284Z"
 tags: ["Tree", "Traversal"]
 description: BST Pre Order Traversal

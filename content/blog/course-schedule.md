@@ -1,22 +1,18 @@
 ---
-title: 2 Sum
+title: Course Schedule
 date: "2020-06-16T22:12:03.284Z"
-tags: []
+tags:
+  ["Depth-first Search", "Breadth-first Search", "Graph", "Topological Sort"]
 description: 2 Sum
 
-status: todo
+status: doing
 ---
 
-Course Schedule
 There are a total of numCourses courses you have to take, labeled from 0 to numCourses - 1. You are given an array prerequisites where prerequisites[i] = [ai, bi] indicates that you must take course bi first if you want to take course ai.
 
 Return true if you can finish all courses. Otherwise, return false.
 
 Example 1:
-
-Example 2:
-
-Constraints:
 
 ```
  Input: numCourses = 2, prerequisites = [[1,0]]
@@ -26,6 +22,8 @@ To take course 1 you should have finished course 0. So it is possible.
 
 ```
 
+Example 2:
+
 ```
 Input: numCourses = 2, prerequisites = [[1,0],[0,1]]
 Output: false
@@ -34,14 +32,7 @@ To take course 1 you should have finished course 0, and to take course 0 you sho
 
 ```
 
-"Depth-first Search","Breadth-first Search","Graph","Topological Sort"
-
 ```javascript
-/**
-  * @param {number} numCourses
-  * @param {number[][]} prerequisites
-  * @return {boolean}
-  */
  var canFinish = function(numCourses, prerequisites) {
      var graph = new Map();
      

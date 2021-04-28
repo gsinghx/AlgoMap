@@ -1,6 +1,5 @@
 ---
 title: BST Level Order Traversal
-slug: /bst-level-order
 date: "2020-06-16T22:12:03.284Z"
 tags: ["Tree", "Traversal"]
 description: BST Level Order Traversal
@@ -11,15 +10,11 @@ status: done
 Binary Tree Level Order Traversal
 Given the root of a binary tree, return the level order traversal of its nodes' values. (i.e., from left to right, level by level).
 
-
-
 Example 1:
 
 Example 2:
 
 Example 3:
-
-
 
 Constraints:
 

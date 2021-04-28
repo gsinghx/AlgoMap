@@ -1,6 +1,5 @@
 ---
 title: BST Construction
-slug: /bst
 date: "2020-06-16T22:12:03.284Z"
 tags: ["Tree", "Construction"]
 description: BST Construction

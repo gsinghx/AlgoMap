@@ -1,9 +1,8 @@
 ---
-title: BST In Order Traversal
-slug: /bst-in-order
+title: BST Post Order Traversal
 date: "2020-06-16T22:12:03.284Z"
 tags: ["Tree", "Traversal"]
-description: BST In Order Traversal
+description: BST Post Order Traversal
 
 status: done
 ---
@@ -20,11 +19,9 @@ Sample tree:
     1     3       10
 ```
 
-## In Order traversal
+## Post Order traversal:
 
-[1, 2, 3, 5, 9, 10]
-
-> In order traversal of a BST results in a sorted list.
+[1, 3, 2, 10, 9, 5]
 
 ## Recursive:
 
@@ -37,8 +34,8 @@ function preorder(root) {
   if (root == null) return
 
   preorder(root.left)
-  traversal.push(root.val)
   preorder(root.right)
+  traversal.push(root.val)
 }
 ```
 
@@ -48,17 +45,25 @@ Depth first search, using a stack.
 
 ```javascript
 var traversal = []
-
 var stack = []
 
 while (stack.length != 0 || root != null) {
-  while (root != null) {
+  if (root) {
     stack.push(root)
     root = root.left
-  }
+  } else {
+    var temp = stack[stack.length - 1]
+    if (temp.right) {
+      root = temp.right
+    } else {
+      temp = stack.pop()
+      res.push(temp.val)
 
-  var node = stack.pop()
-  traversal.push(node.val)
-  root = node.right
+      while (stack.length != 0 && stack[stack.length - 1].right == temp) {
+        temp = stack.pop()
+        res.push(temp.val)
+      }
+    }
+  }
 }
 ```
