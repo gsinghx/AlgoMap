@@ -7,7 +7,7 @@ description: BST Post Order Traversal
 status: done
 ---
 
-BST Construction: [Link](/bst)
+> BST Construction is covered [here](/bst).
 
 Sample tree:
 
@@ -21,11 +21,11 @@ Sample tree:
 
 ## Post Order traversal:
 
-[1, 3, 2, 10, 9, 5]
+The first element will be the left child, then the right, then the root element at the last.
 
-## Recursive:
+`[1, 3, 2, 10, 9, 5]`
 
-Trivial solution:
+## Recursive solution:
 
 ```javascript
 var traversal = []
@@ -39,7 +39,7 @@ function preorder(root) {
 }
 ```
 
-## Iterative:
+## Iterative solution:
 
 Depth first search, using a stack.
 
@@ -67,3 +67,9 @@ while (stack.length != 0 || root != null) {
   }
 }
 ```
+
+## Other BST traversals:
+
+- [Level Order Traversal](/bst-level-order)
+- [Pre Order Traversal](/bst-pre-order)
+- [In Order Traversal](/bst-in-order)

@@ -2,19 +2,35 @@
 title: LRU Cache
 slug: /lru
 date: "2021-03-19T22:12:03.284Z"
-tags: ["Cache"]
+tags: ["Cache", "LinkedList", "Map"]
 description: LRU Cache
 
 status: done
 ---
 
-LFU cache covered [Here](/lfu)
+> Follow up to this question, LFU cache is covered [Here](/lfu)
 
 What's an LRU Cache:
 
-- Least Recently Used item is removed from the cache when the cache is full.
-- We somehow maintain the position of the cache item which was used the earliest and remove it.
-- Can be implemented using [Linked Lists](/ll).
+- A system to maintain a cache with in a limited amount of memory.
+- If the memory is limited, obviously we'll reach a point where there is no space left to store the cache item.
+- So the least recently used (LRU) item is removed from the cache when the cache is full.
+- We maintain the position of the cache item which was used the earliest and remove it.
+- This position of each item can be implemented using [Linked Lists](/ll).
+- Valid operations on a cache system:
+  1. get(key)
+  2. put(key, value)
+
+## Example:
+
+```
+Cache Capacity: 2
+put(1,1)  //Cache: {1:1}
+put(2,2)  // Cache: {1:1, 2:2}
+get(1)    // Cache: {1:1, 2:2}, Output: 1
+put(3,3)  // Cache: {1:1, 3:3}, Key 2 removed from the cache
+get(2)    // Cache: {1:1, 3:3}, Output: -1
+```
 
 ## Implementation
 
@@ -54,4 +70,15 @@ LRUCache.prototype.updateHistory = function (key) {
   }
   this.history.push(key)
 }
+```
+
+## Execution:
+
+```javascript
+var lru = new LRUCache(2)
+lru.put(1, 1)
+lru.put(2, 2)
+lru.get(1)
+lru.put(3, 3)
+lru.get(2)
 ```

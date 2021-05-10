@@ -31,7 +31,7 @@ const BlogIndex = ({ data, location }) => {
         </div>
         <div className="quadrant border-bottom">
           <h3>
-            <Link to="/categories/linked-list">#Linked List</Link>
+            <Link to="/categories/linked-list">#LinkedList</Link>
           </h3>
           <div className="quadrant-links">
             {posts

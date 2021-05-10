@@ -7,12 +7,12 @@ description: BST Construction
 status: done
 ---
 
-Properties of BST:
+## Properties of BST:
 
 - Binary tree
-- Value of root node greater than its left child and less than right child
+- Value of root node is greater than its left child and less than its right child
 
-### A tree Node:
+## A tree Node:
 
 ```javascript
 var TreeNode = function (val) {
@@ -22,7 +22,7 @@ var TreeNode = function (val) {
 }
 ```
 
-### Naive approach to construct a BST:
+## Naive approach to construct a BST:
 
 ```javascript
 var root = new TreeNode(1)
@@ -32,7 +32,7 @@ root.left.left = new TreeNode(3)
 root.right.right = new TreeNode(4)
 ```
 
-### Constructing BST from an array representing a tree:
+## Constructing BST from an array representing a tree:
 
 Consider a tree:
 
@@ -50,13 +50,14 @@ The above tree can be represented in an array like:
 [5, 2, 9, 1, 3, null, 10]
 ```
 
-Explanation:
+### Explanation:
 
 - The array starts with the root element 5, position i=0.
 - Any node's left element = 2\*i + 1
 - Any node's right element = 2\*i + 2
+- _null_ value represents that the left child of 9 is empty.
 
-Constructing a tree from this array:
+### Constructing a tree from this array:
 
 ```javascript
 function constructTree(arr, i) {

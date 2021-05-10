@@ -1,11 +1,13 @@
 ---
 title: 3 Sum
 date: "2020-06-16T22:12:03.284Z"
-tags: ["Array", "Two Pointer"]
+tags: ["Array", "TwoPointer"]
 description: 3 Sum
 
 status: done
 ---
+
+> This is a follow up question to the [2 Sum](/2-sum) problem.
 
 Given an integer array, return all unique triplets that sum to 0.
 

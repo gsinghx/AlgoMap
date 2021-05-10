@@ -7,7 +7,7 @@ description: BST In Order Traversal
 status: done
 ---
 
-BST Construction: [Link](/bst)
+> BST Construction is covered [here](/bst).
 
 Sample tree:
 
@@ -21,13 +21,13 @@ Sample tree:
 
 ## In Order traversal
 
-[1, 2, 3, 5, 9, 10]
+The root element will be between the left and the right elements respectively.
 
-> In order traversal of a BST results in a sorted list.
+`[1, 2, 3, 5, 9, 10]`
 
-## Recursive:
+> Note: In order traversal of a BST results in a sorted list.
 
-Trivial solution:
+## Recursive solution:
 
 ```javascript
 var traversal = []
@@ -41,7 +41,7 @@ function preorder(root) {
 }
 ```
 
-## Iterative:
+## Iterative solution:
 
 Depth first search, using a stack.
 
@@ -61,3 +61,9 @@ while (stack.length != 0 || root != null) {
   root = node.right
 }
 ```
+
+## Other BST traversals:
+
+- [Level Order Traversal](/bst-level-order)
+- [Post Order Traversal](/bst-post-order)
+- [Pre Order Traversal](/bst-pre-order)

@@ -4,7 +4,7 @@ date: "2020-06-16T22:12:03.284Z"
 tags: ["Array", "Tree", "Depth-first Search"]
 description: BST from Preorder and Inorder Traversals
 
-status: done
+status: todo
 ---
 
 Construct Binary Tree from Preorder and Inorder Traversal

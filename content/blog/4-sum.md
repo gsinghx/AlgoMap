@@ -4,7 +4,7 @@ date: "2020-06-16T22:12:03.284Z"
 tags: ["Array", "Hash Table", "Two Pointers"]
 description: 4 Sum
 
-status: done
+status: doing
 ---
 
 Given an array of integers, return an array of all the unique quadruplets.
