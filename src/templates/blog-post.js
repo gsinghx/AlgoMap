@@ -98,7 +98,6 @@ export const pageQuery = graphql`
         title
         tags
         description
-        slug
       }
       html
     }
@@ -107,7 +106,6 @@ export const pageQuery = graphql`
         slug
       }
       frontmatter {
-        slug
         title
       }
     }
@@ -116,7 +114,6 @@ export const pageQuery = graphql`
         slug
       }
       frontmatter {
-        slug
         title
       }
     }

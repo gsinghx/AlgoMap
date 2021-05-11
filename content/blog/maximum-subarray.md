@@ -1,6 +1,5 @@
 ---
 title: Maximum Subarray
-slug: /maximum-subarray
 date: "2020-06-16T22:12:03.284Z"
 tags: ["Array", "Divide and Conquer", "Dynamic Programming"]
 description: 2 Sum

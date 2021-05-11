@@ -1,6 +1,5 @@
 ---
 title: Merge k Sorted Lists
-slug: /merge-k-sorted-lists
 date: "2020-06-16T22:12:03.284Z"
 tags: ["Linked List", "Heap"]
 description: 2 Sum

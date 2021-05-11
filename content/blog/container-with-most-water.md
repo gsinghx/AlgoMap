@@ -1,6 +1,5 @@
 ---
 title: Container With Most Water
-slug: /container-with-most-water
 date: "2020-06-16T22:12:03.284Z"
 tags: ["String", "Dynamic Programming"]
 description: 2 Sum

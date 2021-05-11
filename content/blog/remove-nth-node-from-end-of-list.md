@@ -1,6 +1,5 @@
 ---
 title: Remove Nth Node From End of List
-slug: /remove-nth-node-from-end-of-list
 date: "2020-06-16T22:12:03.284Z"
 tags: ["Linked List", "Two Pointers"]
 description: 2 Sum

@@ -1,6 +1,5 @@
 ---
 title: LRU Cache
-slug: /lru
 date: "2021-03-19T22:12:03.284Z"
 tags: ["Cache", "LinkedList", "Map"]
 description: LRU Cache

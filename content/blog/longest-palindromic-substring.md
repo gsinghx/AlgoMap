@@ -1,6 +1,5 @@
 ---
 title: Longest Palindromic Substring
-slug: /longest-palindromic-substring
 date: "2020-06-16T22:12:03.284Z"
 tags: ["String", "Dynamic Programming"]
 description: 2 Sum

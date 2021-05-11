@@ -1,6 +1,5 @@
 ---
 title: Search in Rotated Sorted Array
-slug: /search-in-rotated-sorted-array
 date: "2020-06-16T22:12:03.284Z"
 tags: ["BinarySearch"]
 description: Search in Rotated Sorted Array

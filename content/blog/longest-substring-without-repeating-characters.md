@@ -1,6 +1,5 @@
 ---
 title: Longest Substring Without Repeating Characters
-slug: /longest-substring-without-repeating-characters
 date: "2020-06-16T22:12:03.284Z"
 tags: ["Map", "Two Pointers", "Sliding Window", "String"]
 description: 2 Sum

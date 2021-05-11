@@ -1,6 +1,5 @@
 ---
 title: Same Tree
-slug: /same-tree
 date: "2020-06-16T22:12:03.284Z"
 tags: ["Tree"]
 description: Same Tree
@@ -13,15 +12,11 @@ Given the roots of two binary trees p and q, write a function to check if they a
 
 Two binary trees are considered the same if they are structurally identical, and the nodes have the same value.
 
-
-
 Example 1:
 
 Example 2:
 
 Example 3:
-
-
 
 Constraints:
 

@@ -1,6 +1,5 @@
 ---
 title: Group Anagrams
-slug: /group-anagrams
 date: "2020-06-16T22:12:03.284Z"
 tags: ["Map", "String"]
 description: 2 Sum

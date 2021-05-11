@@ -1,6 +1,5 @@
 ---
 title: Merge Two Sorted Lists
-slug: /merge-two-sorted-lists
 date: "2020-06-16T22:12:03.284Z"
 tags: ["Linked List", "Recursion"]
 description: 2 Sum

@@ -129,7 +129,6 @@ export const pageQuery = graphql`
         }
         frontmatter {
           status
-          slug
           title
           tags
           date(formatString: "MMMM DD, YYYY")

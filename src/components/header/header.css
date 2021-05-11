@@ -102,3 +102,10 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+@media (max-width: 480px) {
+  .header-nav {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}

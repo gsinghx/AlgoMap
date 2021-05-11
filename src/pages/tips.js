@@ -10,6 +10,7 @@ const Tips = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
       <h1>Tips</h1>
+      <div>- Validate inputs. check for null. Graph/tree: Bfs or dfs</div>
     </Layout>
   )
 }
