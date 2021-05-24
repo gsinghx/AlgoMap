@@ -79,7 +79,8 @@ body {
 
   --bgFrom: #fff;
   --bgTo: #e2e2e2;
-  --shuffle-icon: url("images/shuffle.svg");
+  --shuffle-icon: url("./images/shuffle.svg");
+  --logo: url("./images/logo.svg");
 
   min-height: 100vh;
   font-family: var(--font-body);
@@ -98,7 +99,8 @@ body.dark {
 
   --bgFrom: rgb(26, 26, 26);
   --bgTo: #000;
-  --shuffle-icon: url("images/shuffle-dark.svg");
+  --shuffle-icon: url("./images/shuffle-white.svg");
+  --logo: url("./images/logo-white.svg");
 }
 
 footer {

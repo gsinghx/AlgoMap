@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import { ThemeToggler } from "gatsby-plugin-dark-mode"
 import "./header.css"
+import logo from "./logo.svg"
 
 const Header = ({ location }) => {
   const emojis = [
@@ -26,7 +27,10 @@ const Header = ({ location }) => {
     <header className="global-header">
       <div className="header-title">
         <Link className="header-title-link" to="/">
-          AlgoMap {emojis[parseInt(Math.random() * emojis.length)]}
+          <div className="header-logo"></div>
+          {/* <img className="header-logo" src={logo} /> */}
+          {/* AlgoMap  */}
+          {/* {emojis[parseInt(Math.random() * emojis.length)]} */}
         </Link>
         <div>
           <ThemeToggler>
@@ -69,22 +73,22 @@ const Header = ({ location }) => {
           >
             Categories
           </Link>
-          <Link
+          {/* <Link
             className={location === "/tips" ? `nav-link-active` : `nav-link`}
             to="/tips"
           >
             Tips
-          </Link>
+          </Link> */}
         </div>
         <div>
-          <Link
+          {/* <Link
             className={
               location === "/resources" ? `nav-link-active` : `nav-link`
             }
             to="/resources"
           >
             Resources
-          </Link>
+          </Link> */}
           <Link
             className={location === "/about" ? `nav-link-active` : `nav-link`}
             to="/about"

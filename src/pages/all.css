@@ -1,0 +1,8 @@
+.shuffle-button {
+  width: 80px;
+  height: 56px;
+  background-size: 80px 56px;
+  cursor: pointer;
+  margin-left: 10px;
+  background-image: var(--shuffle-icon);
+}

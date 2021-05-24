@@ -4,8 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PostAbbrev from "../components/postabbrev"
 import * as JsSearch from "js-search"
-import shuffleIcon from "../assets/images/shuffle.svg"
-import shuffleIconDark from "../assets/images/shuffle-dark.svg"
+import "./all.css"
 
 const All = ({ data, location }) => {
   const rebuildIndex = () => {
@@ -79,16 +78,7 @@ const All = ({ data, location }) => {
               border: `1px solid var(--color-text-light)`,
             }}
           />
-          <div
-            style={{
-              height: `56px`,
-              width: `80px`,
-              cursor: `pointer`,
-              marginLeft: `10px`,
-              background: `var(--shuffle-icon) no-repeat`,
-            }}
-            onClick={showRandomArticle}
-          ></div>
+          <div className="shuffle-button" onClick={showRandomArticle}></div>
         </div>
       </form>
       <ol style={{ listStyle: `none` }}>

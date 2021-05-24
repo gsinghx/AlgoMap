@@ -6,6 +6,13 @@
   align-items: center;
   margin-bottom: 10px;
 }
+.header-logo {
+  width: 280px;
+  height: 70px;
+  background-size: 280px 70px;
+  /* background-image: url("./logo.svg"); */
+  background-image: var(--logo);
+}
 .header-title-link {
   text-decoration: none;
   font-size: 40px;
